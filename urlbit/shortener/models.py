@@ -26,7 +26,7 @@ class URL(models.Model):
         validate = URLValidator()
         try:
             validate(self.full_url)
-        except ValidationError as ve:
+        except ValidationError:
             raise GraphQLError('invalid url')
 
         return super().save(*args, **kwargs)
