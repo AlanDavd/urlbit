@@ -1,0 +1,19 @@
+# Base
+pytz==2020.1
+python-slugify==4.0.1
+psycopg2==2.8.5 --no-binary psycopg2
+
+# Django
+django>=3
+
+# Environment
+django-environ==0.4.5
+
+# Static files
+whitenoise==5.1.0
+
+# Passwords security
+argon2-cffi==20.1.0
+
+# Graphql
+graphene-django>==2.2.0
