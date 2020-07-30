@@ -6,7 +6,7 @@ from django.core.validators import URLValidator
 from django.core.exceptions import ValidationError
 
 # Hash
-from hashlib import md5
+from hashlib import sha256
 
 # Graphql
 from graphql import GraphQLError
@@ -21,7 +21,7 @@ class URL(models.Model):
 
     def save(self, *args, **kwargs):
         if not self.id:
-            self.url_hash = md5(self.full_url.encode()).hexdigest()[:10]
+            self.url_hash = sha256(self.full_url.encode()).hexdigest()[:10]
 
         validate = URLValidator()
         try:
